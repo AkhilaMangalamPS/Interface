@@ -1,10 +1,18 @@
+/**
+ * CSV Storage implementing storage interface.
+ * Methods to read and write files in CSV format.
+ * This class handles reading and writing from a file named "book.csv".
+ */
 import java.io.*;
 import java.util.*;
 
 class XMLStorage implements Storage {
 
     private final String FILE = "book.xml";
-
+    /**
+     * Reads book from the CSV file.
+     * @return list of Book objects from the file.
+     */
     public List<Book> read() {
         List<Book> list = new ArrayList<>();
 
@@ -46,7 +54,10 @@ class XMLStorage implements Storage {
 
         return list;
     }
-
+    /**
+     * Write book to the CSV file.
+     * @param books The list of objects to be written to the file
+     */
     public void write(List<Book> books) {
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(FILE))) {
 
